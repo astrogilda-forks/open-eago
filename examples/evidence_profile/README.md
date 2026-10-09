@@ -1,3 +1,5 @@
+<!-- Copyright 2026 Sankalp Gilda. SPDX-License-Identifier: Apache-2.0 -->
+
 # Evidence profile
 
 Signed, re-checkable evidence for an OpenEAGO orchestration run. For every message in a run, this example emits one [DSSE](https://github.com/secure-systems-lab/dsse) envelope whose payload is the RFC 8785 (JCS) canonical bytes of an [in-toto Statement v1](https://github.com/in-toto/attestation/blob/main/spec/v1/statement.md), signed with Ed25519. The verifier checks the signature over the DSSE pre-authentication encoding, that the payload is exactly its canonical form, that the Statement's subject digest is the SHA-256 of the canonical message, and that each step names the envelope before it, so a dropped, reordered or swapped step is caught.

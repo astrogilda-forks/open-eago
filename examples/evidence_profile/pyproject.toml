@@ -1,3 +1,5 @@
+# Copyright 2026 Sankalp Gilda
+# SPDX-License-Identifier: Apache-2.0
 [project]
 name = "openEAGO-evidence-profile"
 version = "0.1.0"
