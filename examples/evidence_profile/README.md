@@ -37,7 +37,7 @@ verified 6 steps, chain intact
 
 ## Conformance
 
-The envelope verifier is replayed against signed DSSE envelopes from the conformance corpora in [`agent-evidence-vectors`](https://pypi.org/project/agent-evidence-vectors/), pinned by version and wheel hash in `requirements-conformance.txt`. `conformance/build_suite.py` assembles the suite from the package's two DSSE corpora plus this example's own six envelopes, adds six deterministic mutations of each envelope (flipped signature bit, flipped payload bit, swapped `payloadType`, unpinned signer, no signatures, payload that is not base64), and the package's harness drives `verify_adapter.py` over all of it:
+The envelope verifier (Python 3.13 or later for the harness) is replayed against signed DSSE envelopes from the conformance corpora in [`agent-evidence-vectors`](https://pypi.org/project/agent-evidence-vectors/), pinned by version and wheel hash in `requirements-conformance.txt`. `conformance/build_suite.py` assembles the suite from the package's two DSSE corpora plus this example's own six envelopes, adds six deterministic mutations of each envelope (flipped signature bit, flipped payload bit, swapped `payloadType`, unpinned signer, no signatures, payload that is not base64), and the package's harness drives `verify_adapter.py` over all of it:
 
 ```bash
 pip install --require-hashes --no-deps -r requirements-conformance.txt
